@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>เกี่ยวกับเรา - Gold Shop</title>
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: #fffdf2;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #ffd700;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    h1 {
+      color: #bfa130;
+    }
+
+    .btn-group {
+      position: fixed;
+      top: 100px;
+      right: 20px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-group button {
+      padding: 10px 20px;
+      background-color: #bfa130;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .product-section {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .product-section h2 {
+      color: #444;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-section p {
+      color: #555;
+    }
+
+    .footer {
+      background-color: #f3f3f3;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    .footer a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .btn-group {
+        top: auto;
+        bottom: 10px;
+        right: 10px;
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- เมนู -->
+  <nav>
+    <a href="Homepage.html">หน้าแรก</a>
+    <a href="Gold.html">ราคาทองย้อนหลัง</a>
+    <a href="About.html">เกี่ยวกับเรา</a>
+    <a href="article.html">บทความ</a>
+    <a href="Login.html">เข้าสู่ระบบ</a>
+  </nav>
+
+  <!-- ปุ่มซื้อขาย -->
+  <div class="btn-group">
+    <button onclick="alert('กำลังจำลองการซื้อทองคำ')">🛒 ซื้อ</button>
+    <button onclick="alert('กำลังจำลองการขายทองคำ')">💰 ขาย</button>
+  </div>
+
+  <!-- เนื้อหา -->
+  <header>
+    <h1>เกี่ยวกับเรา</h1>
+  </header>
+
+  <div class="content">
+
+    <!-- สินค้า -->
+    <div class="product-section">
+      <h2>ทองคำแท่ง 96.5%</h2>
+      <p>ทองคำแท่งบริสุทธิ์จากสมาคมค้าทองคำ มีมาตรฐานสูง นิยมในการลงทุน เหมาะสำหรับนักลงทุนระยะยาว</p>
+    </div>
+
+    <div class="product-section">
+      <h2>ทองรูปพรรณ 96.5%</h2>
+      <p>ทองคำที่มีรูปแบบสวยงาม สวมใส่ได้จริง เหมาะเป็นของขวัญ ของสะสม หรือเก็บมูลค่าในระยะยาว</p>
+    </div>
+
+    <!-- เกี่ยวกับเรา -->
+    <div class="product-section">
+      <h2>ข้อมูลเกี่ยวกับเรา</h2>
+      <p>เราเป็นผู้ให้บริการข้อมูลราคาทองคำในประเทศไทยแบบเรียลไทม์ พร้อมทั้งให้บริการจำลองการซื้อขายเพื่อการเรียนรู้สำหรับผู้ที่สนใจลงทุนทองคำ</p>
+      <p>เว็บไซต์นี้จัดทำขึ้นเพื่อการศึกษาและการนำเสนอเท่านั้น ไม่ใช่ระบบซื้อขายจริง</p>
+    </div>
+
+  </div>
+
+  <!-- ฟุตเตอร์ -->
+  <div class="footer">
+    จัดทำโดย: <strong>นายกฤษดา ศรฤทธิ์</strong> |  
+    Email: <a href="mailto:mogtho8933@gmail.com">mogtho8933@gmail.com</a> |  
+    Line: <a href="https://line.me/ti/p/~NICK" target="_blank">NICK</a> |  
+    IG: <a href="https://www.instagram.com/nickki563" target="_blank">@nickki563</a>
+  </div>
+
+</body>
+</html>

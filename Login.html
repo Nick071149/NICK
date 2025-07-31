@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>เข้าสู่ระบบ - Gold Website</title>
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background: #fffdf2;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background: #ffd700;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #bfa130;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+
+    input {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      padding: 0.8rem;
+      background: #ffd700;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #b88a00;
+      text-decoration: none;
+    }
+
+    .footer {
+      background-color: #f3f3f3;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="Homepage.html">หน้าแรก</a>
+    <a href="Gold.html">ราคาทองย้อนหลัง</a>
+    <a href="About.html">เกี่ยวกับเรา</a>
+    <a href="article.html">บทความ</a>
+    <a href="Login.html">เข้าสู่ระบบ</a>
+  </nav>
+
+  <div class="login-container">
+    <h2>🔐 เข้าสู่ระบบ</h2>
+    <form>
+      <label for="email">อีเมล</label>
+      <input type="email" id="email" required />
+
+      <label for="password">รหัสผ่าน</label>
+      <input type="password" id="password" required />
+
+      <button type="submit">เข้าสู่ระบบ</button>
+    </form>
+
+    <p>ยังไม่มีบัญชี? <a href="#">สมัครสมาชิก</a></p>
+    <p><a href="#">ลืมรหัสผ่าน?</a></p>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Gold Member System | พัฒนาโดย กฤษดา ศรฤทธิ์
+  </div>
+</body>
+</html>

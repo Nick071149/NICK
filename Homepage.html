@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <div class="news-item">
+        <img src="Screenshot 2025-07-03 143818.png" alt="ข่าวทองคำ 1">
+        <p><strong></strong><br>
+       </p>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ราคาทองคำวันนี้ - Gold Website</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: #fffdf2;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #ffd700;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    h1 {
+      color: #bfa130;
+      margin-bottom: 0.5rem;
+    }
+
+    .datetime {
+      text-align: center;
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 90%;
+      margin: auto;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    th {
+      background-color: #fff3b0;
+    }
+
+    .gold-spot {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #b88a00;
+      margin: 2rem 0;
+    }
+
+    .chart-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .news-section {
+      width: 90%;
+      margin: auto;
+      margin-bottom: 2rem;
+    }
+
+    .news-section h2 {
+      color: #bfa130;
+      margin-bottom: 1rem;
+    }
+
+    .news {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .news-item {
+      flex: 1 1 30%;
+      background: #fff;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .news-item img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer {
+      background-color: #f3f3f3;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .news {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- เมนูนำทาง -->
+  <nav>
+    <a href="Homepage.html">หน้าแรก</a>
+    <a href="Gold.html">ราคาทองย้อนหลัง</a>
+    <a href="About.html">เกี่ยวกับเรา</a>
+    <a href="article.html">บทความ</a>
+    <a href="Login.html">เข้าสู่ระบบ</a>
+  </nav>
+
+  <!-- หัวเรื่อง -->
+  <header>
+    <h1>ราคาทองคำวันนี้</h1>
+    <div class="datetime" id="datetime">อัปเดตเมื่อ: ...</div>
+  </header>
+
+  <!-- ตารางราคาทอง -->
+  <table>
+    <thead>
+      <tr>
+        <th>ประเภท</th>
+        <th>ขายออก (บาท)</th>
+        <th>รับซื้อ (บาท)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ทองคำแท่ง 96.5%</td>
+        <td>51,350.00</td>
+        <td>51,250.00</td>
+      </tr>
+      <tr>
+        <td>ทองรูปพรรณ 96.5%</td>
+        <td>52,150.00</td>
+        <td>ฐานภาษี: 50,225.08</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Gold Spot -->
+  <div class="gold-spot">
+    🌐 Gold Spot: $2,338.50 USD/oz
+  </div>
+
+  <!-- กราฟราคาทองคำ -->
+  <div class="chart-container">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <div style="align-self: flex-start; margin-bottom: 0.5rem;">
+        <p id="latest-price" style="font-size: 1rem; color: #333; margin: 0;">
+          📉 ราคาล่าสุด: -- บาท/บาททอง
+        </p>
+        <p id="price-change" style="font-size: 0.9rem; color: #666; margin: 0;">
+          🔄 การเปลี่ยนแปลง: --
+        </p>
+      </div>
+      <h2 style="text-align: center; color: #bfa130;">📈 กราฟราคาทองคำ (จำลองเรียลไทม์)</h2>
+      <p style="text-align: center; color: #666; font-size: 0.9rem;">
+        แสดงการเปลี่ยนแปลงของราคาทองคำแท่ง 96.5% ภายในระยะเวลาไม่กี่นาทีแบบเรียลไทม์ (ข้อมูลจำลอง)
+      </p>
+      <canvas id="goldChart" height="200"></canvas>
+    </div>
+  </div>
+
+  <!-- ข่าวสาร -->
+  <div class="news-section">
+    <h2>📰 ข่าวสารเกี่ยวกับทองคำล่าสุด</h2>
+    <div class="news">
+      <div class="news-item">
+        <img src="Screenshot 2025-07-03 140644.png" alt="ข่าวทองคำ 1">
+        <p><strong>ทองคำพุ่งจากแรงซื้อปลอดภัย</strong><br>
+        นักลงทุนแห่ซื้อทองคำในช่วงเศรษฐกิจไม่แน่นอน ดันราคาทองโลกพุ่งทะลุ 2,350 USD</p>
+      </div>
+      <div class="news-item">
+        <img src="Screenshot 2025-07-03 140912.png" alt="ข่าวทองคำ 2">
+        <p><strong>เงินบาทอ่อนค่าหนุนราคาทองในประเทศ</strong><br>
+        ค่าเงินบาทอ่อนตัวต่ำกว่า 37 บาทต่อดอลลาร์ ส่งผลให้ราคาทองในประเทศเพิ่มสูง แม้ราคาทองโลกจะคงที่</p>
+      </div>
+      <div class="news-item">
+        <img src="Screenshot 2025-07-03 141219.png" alt="ข่าวทองคำ 3">
+        <p><strong>ทองคํายังเผชิญแรงเทขายจากสถานการณ์ทางภูมิรัฐศาสตร์คลี่คลาย</strong><br>
+        ราคาทองคํา Spot ยังเผชิญแรงขายในฐานะสินทรัพย์ปลอดภัยจากสถานการณ์ความขัดแย้งในตะวันออกกลางคลี่คลายลง รวมทั้งสัญญาณบวกจากการเจรจาการค้าระหว่างสหรัฐและจีน แม้มีความเป็นไปได้ที่ธนาคารกลางสหรัฐ(เฟด) จะปรับลดดอกเบี้ยลง ส่วนทองในประเทศเปิดตลาดลงต่ำสุดใหม่ของเดือน
+
+ราคาทองคำตลาดโลกเช้าวันจันทร์สิ้นเดือนมิ.ย. ล่าสุดฟื้นตัวขึ้นจากช่วงแรกปรับตัวลดลงทางเทคนิคจากแรงเทขายสินทรัพย์ปลอดภัยจากสถานการณ์ความขัดแย้งในตะวันออกกลางระหว่างอิสราเอลและอิหร่านผ่อนคลายลงนับตั้งแต่ทั้งสองประเทศบรรลุข้อตกลงหยุดยิง รวมทั้งการบรรลุข้อตกลงทางการค้าระหว่างสหรัฐและจีนในการเร่งรัดการส่งออกแร่หายากจากจีนมายังสหรัฐก่อนถึงเส้นตายวันที่ 9 ก.ค. ซึ่งเป็นวันสิ้นสุดการระงับเก็บภาษีตอบโต้ของสหรัฐ
+
+ส่วนการเปิดเผยข้อมูลเศรษฐกิจสหรัฐล่าสุดโหมกระพือความหวังเกี่ยวกับการปรับลดอัตราดอกเบี้ยของธนาคารกลางสหรัฐ(เฟด) แต่นักวิเคราะห์มองว่าข้อมูลดังกล่าวไม่ได้ส่งผลกระทบต่อราคาทองคำมากนักเนื่องจากทองคำกำลังเผชิญกับแรงขายจากปัจจัยภูมิรัฐศาสตร์</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    &copy; 2025 เว็บไซต์ราคาทองคำ | อัปเดตข้อมูลเรียลไทม์เพื่อผู้ใช้งาน
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const options = {
+        year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        timeZone: 'Asia/Bangkok'
+      };
+      document.getElementById('datetime').textContent =
+        'อัปเดตเมื่อ: ' + now.toLocaleDateString('th-TH', options);
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+
+    const goldLabels = [];
+    const goldData = [];
+
+    const ctx = document.getElementById('goldChart').getContext('2d');
+    const goldChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: goldLabels,
+        datasets: [{
+          label: 'ราคาทองคำแท่ง 96.5% (บาท/บาททองคำ)',
+          data: goldData,
+          borderColor: '#daa520',
+          backgroundColor: 'rgba(218, 165, 32, 0.2)',
+          pointBackgroundColor: '#b8860b',
+          pointBorderColor: '#fff',
+          fill: true,
+          tension: 0.4,
+          borderWidth: 2,
+          pointRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            labels: {
+              color: '#333'
+            }
+          },
+          tooltip: {
+            mode: 'index',
+            intersect: false
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#666' }
+          },
+          y: {
+            beginAtZero: false,
+            ticks: { color: '#666' }
+          }
+        }
+      }
+    });
+
+    function addGoldPrice() {
+      const now = new Date().toLocaleTimeString('th-TH');
+      const newPrice = 51200 + Math.random() * 200;
+      const latestPriceEl = document.getElementById('latest-price');
+      const priceChangeEl = document.getElementById('price-change');
+
+      const lastPrice = goldData.length > 0 ? parseFloat(goldData[goldData.length - 1]) : newPrice;
+      const diff = (newPrice - lastPrice).toFixed(2);
+      const sign = diff >= 0 ? '+' : '';
+      const diffColor = diff >= 0 ? 'green' : 'red';
+
+      if (goldLabels.length > 8) {
+        goldLabels.shift();
+        goldData.shift();
+      }
+      goldLabels.push(now);
+      goldData.push(newPrice.toFixed(2));
+      goldChart.update();
+
+      latestPriceEl.textContent = `📉 ราคาล่าสุด: ${newPrice.toFixed(2)} บาท/บาททอง`;
+      priceChangeEl.innerHTML = `🔄 การเปลี่ยนแปลง: <span style="color: ${diffColor}">${sign}${diff}</span>`;
+    }
+
+    addGoldPrice();
+    setInterval(addGoldPrice, 10000);
+  </script>
+
+</body>
+</html>

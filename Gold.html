@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ราคาทองย้อนหลัง</title>
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: #fffdf2;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #ffd700;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #bfa130;
+      margin-bottom: 1.5rem;
+    }
+
+    .date-form {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .date-form input[type="date"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .date-form button {
+      padding: 0.5rem 1rem;
+      background-color: #bfa130;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-left: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    th {
+      background-color: #fff3b0;
+    }
+
+    .section-title {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #444;
+    }
+
+    .footer {
+      background-color: #f3f3f3;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- เมนูนำทาง -->
+  <nav>
+    <a href="Homepage.html">หน้าแรก</a>
+    <a href="Gold.html">ราคาทองย้อนหลัง</a>
+    <a href="About.html">เกี่ยวกับเรา</a>
+    <a href="article.html">บทความ</a>
+    <a href="Login.html">เข้าสู่ระบบ</a>
+  </nav>
+
+  <main>
+    <h1>ราคาทองย้อนหลัง</h1>
+
+    <!-- เลือกวันที่ -->
+    <div class="date-form">
+      <label for="gold-date">ประจำวันที่:</label>
+      <input type="date" id="gold-date" value="2025-07-03" />
+      <button onclick="showData()">Submit</button>
+    </div>
+
+    <!-- ตารางราคาทองคำ -->
+    <div id="gold-data">
+      <h2 class="section-title">ราคาทองคำตามประกาศของสมาคมค้าทองคำ ประจำวันที่ 03/07/2568</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ชนิดทอง</th>
+            <th>ราคารับซื้อ (กรัมละ)</th>
+            <th>ราคารับซื้อ (บาทละ)</th>
+            <th>ราคาขาย (บาทละ)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ทองคำแท่ง 96.5%</td><td>n/a</td><td>51,300.00</td><td>51,400.00</td></tr>
+          <tr><td>ทองรูปพรรณ 96.5%</td><td>3,316.00</td><td>50,270.56</td><td>52,200.00</td></tr>
+          <tr><td>ทองรูปพรรณ 90%</td><td>2,984.40</td><td>45,243.50</td><td>n/a</td></tr>
+          <tr><td>ทองรูปพรรณ 80%</td><td>2,652.80</td><td>40,216.45</td><td>n/a</td></tr>
+          <tr><td>ทองรูปพรรณ 50%</td><td>1,492.20</td><td>22,621.75</td><td>n/a</td></tr>
+          <tr><td>ทองรูปพรรณ 40%</td><td>1,160.60</td><td>17,594.70</td><td>n/a</td></tr>
+          <tr><td>ทองรูปพรรณ 99.99%</td><td>3,436.27</td><td>52,093.85</td><td>n/a</td></tr>
+        </tbody>
+      </table>
+
+      <h2 class="section-title">ราคาทองคำตลาดต่างประเทศ</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>แหล่งราคา</th>
+            <th>ราคาเปิด</th>
+            <th>ราคาปิด</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ฮ่องกง</td><td>31,305.00</td><td>n/a</td></tr>
+          <tr><td>ลอนดอน AM FIX</td><td>n/a</td><td>n/a</td></tr>
+          <tr><td>ลอนดอน PM FIX</td><td>n/a</td><td>n/a</td></tr>
+          <tr><td>นิวยอร์ค</td><td>n/a</td><td>3,335.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <div class="footer">
+    &copy; 2025 เว็บไซต์ราคาทองคำ | แสดงข้อมูลย้อนหลังจากแหล่งข้อมูลสมาคมค้าทองคำ
+  </div>
+
+  <!-- JavaScript จำลองการเลือกวันที่ -->
+  <script>
+    function showData() {
+      const dateInput = document.getElementById("gold-date").value;
+      alert("ระบบยังเป็นตัวอย่าง: แสดงข้อมูลวันที่ " + dateInput + " แบบจำลอง");
+      // หากคุณต้องการให้เชื่อม API จริงในอนาคต สามารถนำค่าของ dateInput ไปใช้ fetch ข้อมูลได้
+    }
+  </script>
+
+</body>
+</html>
